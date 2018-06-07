@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/search.css"> -->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-    
+
     <title>Search</title>
 </head>
 
@@ -19,7 +20,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light textColor fixed-top shadow">
         <div class="container ">
-            <a class="navbar-brand " href="index.html">Bookworm</a>
+                <a class="navbar-brand" href="#">
+                        <img src="images/bookworm.png" width="30" height="30" class="d-inline-block align-top" alt=""> ƁƠƠƘƜƠƦM
+                      </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,46 +30,50 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">ӇƠMЄ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.html">Search</a>
+                        <a class="nav-link" href="search.html">ƧЄƛƦƇӇ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="price.html">Prices</a>
+                        <a class="nav-link" href="price.html">MƳ ƑƛƔƠƲƦƖƬЄ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.html">ƇƠƝƬƛƇƬ ƲƧ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="searchHeader">
-        <div class="searchContainer">
-            <img id="searchImg" src="../images/googleLogo1.png" />
-            <form name="google" action="#" method="POST">
-                <br>
-                <input type="search" class="search" placeholder="Search your book">
-                <br>
-                <input type="submit" class="buttonSearch" name="submit" value="Bookworm Search">
-                <input type="submit" class="buttonSearch" name="lucky" value="I'm Feeling Lucky">
-            </form>
-        </div>
-    </header>
 
-    <div id="resultContainer">
-        <div class="resultItem1"></div>
+    <div calss="container">
+        <header class="row ">
+            <div class=" col-md-6 mx-auto searchContainer">
+                <h1>ƁƠƠƘƜƠƦM</h1>
+                <!-- <img id="searchImg" src="images/bookwormLetters.jpg " /> -->
+                <form >
+                    <br>
+                    <input type="input" id="search-text" class="search" placeholder="Search your book">
+                    <br>
+                    <input type="submit" id="search-btn" class="buttonSearch" name="submit" value="Bookworm Search">
+
+                </form>
+            </div>
+        </header>
+
+        <div class="row w-75 ml-5 mt-5" id="book-view">
+
+        </div>
+        <!-- <div class="resultItem1"></div>
         <div class="resultItem2"></div>
-        <div class="resultItem3"></div>
+        <div class="resultItem3"></div> -->
     </div>
 
 
 
-    <footer class="py-3  text-dark">
-        <div class="container">
-            <p class="m-0 text-center text-dark">Copyright &copy; Bookworm 2018</p>
-        </div>
+    <footer class=" footer border-top   text-dark text-center">
+        <img src="images/bookworm.png" width="30" height="30" class="d-inline-block ext-center align-middle " alt="">
+        <span class="text-center"> Copyright &copy; Bookworm 2018</span>
         <!-- /.container -->
     </footer>
 
@@ -75,8 +82,11 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="javascript/search.js"></script>
+    <script src="javascript/bootbox.min.js"></script>
 
 </body>
 
