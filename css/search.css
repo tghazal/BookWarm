@@ -1,4 +1,4 @@
-.bodyContainer {
+.bodySearch {
     background: url("../images/book9.jpg");
     background-size: 100%;
   }
@@ -15,7 +15,7 @@
   
     }
     
-    .search {
+  .search {
       width: 500px;
       height: 28px;
       border-top: 1px solid #bdbdbd;
@@ -30,7 +30,7 @@
       background-size:14px 19px;
       }
     
-    .button {
+  .buttonSearch {
       border: 1px solid #d3d3d3;
       background: #f3f3f3;
       color:#696969;
@@ -44,7 +44,7 @@
       border-radius:2px;
     }
     
-    .button:hover {
+  .buttonSearch:hover {
       color: #2a2a2a;
       border: 1px solid #bdbdbd;
     }
