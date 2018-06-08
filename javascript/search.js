@@ -15,6 +15,8 @@ $("#search-btn").on("click", function (event) {
 
         axios.get(url).then(function (response) {
             // console.log( response.data.items); 
+            $("#book-view").empty();
+            $("#desc-body").empty();
             for (var i = 0; i < response.data.items.length; i++) {
                 var item = response.data.items[i];
 
@@ -25,6 +27,7 @@ $("#search-btn").on("click", function (event) {
                 var authors = item.volumeInfo.authors[0];
                 var category = item.volumeInfo.categories[0];
                 var desription = item.volumeInfo.description;
+                console.log("des is "+desription);
 
 
 
@@ -40,8 +43,12 @@ $("#search-btn").on("click", function (event) {
                 bookImg.css("height", "180px");
                 bookImg.addClass("book-img");
                 var titleP = $("<p>").text("Title :" + bookTitle);
-                var modalBtn = $("<button type='Button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Description</button>")
-                var col = $("<div class='col-md-3 col-sm-6 mt-2 '>").append([bookImg, titleP]);
+                //var descriptionP=$("<p>").text(desription);
+               $("#desc-body").empty();
+               $("#desc-body").text(desription);
+                
+                var modalBtn = $("<button type='Button' class='btn btn-info btn-lg decBtn' data- toggle='modal' data-target='#myModal'>Description</button>")
+                var col = $("<div class='col-md-3 col-sm-6 mt-2 '>").append([bookImg, titleP, modalBtn]);
                 $("#book-view").append(col);
 
                 

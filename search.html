@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
@@ -20,8 +22,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light textColor fixed-top shadow">
         <div class="container ">
-                <a class="navbar-brand" href="#">
-                        <img src="images/bookworm.png" width="30" height="30" class="d-inline-block align-top" alt=""> ƁƠƠƘƜƠƦM
+                <a class="navbar-brand imageText" href="#">
+                        <img src="images/bookworm.png" width="30" height="30" class="d-inline-block align-top " alt=""> Bookworm
                       </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -29,18 +31,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">ӇƠMЄ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="search.html">ƧЄƛƦƇӇ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="price.html">MƳ ƑƛƔƠƲƦƖƬЄ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">ƇƠƝƬƛƇƬ ƲƧ</a>
-                    </li>
+                        <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="search.html">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="price.html">My Favourite</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
                 </ul>
             </div>
         </div>
@@ -64,6 +66,24 @@
         <div class="row w-75 ml-5 mt-5" id="book-view">
 
         </div>
+          <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Description</h4>
+            </div>
+            <div class="modal-body" id="modal-body">
+             <p id="desc-body"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
         <!-- <div class="resultItem1"></div>
         <div class="resultItem2"></div>
         <div class="resultItem3"></div> -->
