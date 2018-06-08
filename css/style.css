@@ -5,20 +5,42 @@ html {
 body {
   margin-bottom: 60px; /* Margin bottom by footer height */
 }
-#carouselExampleIndicators{
-  width: 70%; /* for example */
-  margin: auto;
-  margin-top: 110px;
 
+.nav-link,myFont{
+  font-family: 'Jua', sans-serif;
+}
+
+
+.carousel-caption {
+top: 60%;
+transform: translateY(-50%);
+bottom: initial;
+}
+
+.carousel-caption2{
+  top: 30%;
+  transform: translateY(-50%);
+  bottom: initial;
+  }
+
+
+.carousel-item {
+  -webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+transform-style: preserve-3d;
 }
 .carousel-item {
-    height: 100vh;
-    min-height: 300px;
+  
+    max-width: 100%;
+    width: 100%;
+    height:90vh;
+    min-height: 70%;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    
   }
 #contactForm {
 margin: 100px 500px 50px 500px;
