@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
@@ -17,11 +17,12 @@
 </head>
 
 <body class="homeBody">
-
+   
   <!-- Navigation -->
-  <div class="navDiv">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light textColor fixed-top shadow">
+  <div class="navDiv ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light textColor fixed-top shadow mb-3">
       <div class="container ">
+         
         <a class="navbar-brand" href="#">
           <img src="images/bookworm.png" width="30" height="30" class="d-inline-block align-top" alt=""> ƁƠƠƘƜƠƦM
         </a>
@@ -33,25 +34,33 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">ӇƠMЄ</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="search.html">ƧЄƛƦƇӇ</a>
+              <a class="nav-link" href="search.html">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="price.html">MƳ ƑƛƔƠƲƦƖƬЄ</a>
+              <a class="nav-link" href="price.html">My Favourite</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">ƇƠƝƬƛƇƬ ƲƧ</a>
+              <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Log In</a>
             </li>
           </ul>
         </div>
+        
       </div>
     </nav>
+   
+     
+    <div class="container-fluid">
 
+    
+    <div class="row">
+      <div class="col-md-12">
+  
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -62,28 +71,31 @@
         <!-- Slide One - Set the background image for this slide in the line below -->
         <div class="carousel-item active" style="background-image: url('images/book2.jpg')">
           <div class="carousel-caption d-none d-md-block ">
-            <h2>Bookworm</h2>
-            <button>
+            <h2>ƁƠƠƘƜƠƦM</h2>
+            <h4>
+              <p class="myFont"> you can search any book you want !!!</p>
+              </h3>
+              <button class="btn btn-warning px-4">
               <a href="search.html">Search</a>
             </button>
-            <h3>
-              <p>A Place where you can search any book you want !!!</p>
-              <h3></h3>
           </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('images/book-1.jpg')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Second Slide</h3>
-            <p>This is a description for the second slide.</p>
+        <div class="carousel-item" style="background-image: url('images/book8.jpg')">
+          <div class="carousel-caption  d-none d-md-block">
+            <h3>ƁƠƠƘƜƠƦM</h3>
+            <p>you can save your favourite books</p>
+            <button class="btn btn-warning px-4">
+                <a href="myFavourite.html">My Favourite</a>
+              </button>
           </div>
 
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('images/book4.jpg')">
+        <div class="carousel-item" style="background-image: url('images/book9.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Third Slide</h3>
-            <p>books are important</p>
+            <h3>ƁƠƠƘƜƠƦM</h3>
+            <p>books are magic</p>
           </div>
         </div>
       </div>
@@ -97,16 +109,17 @@
       </a>
     </div>
 
-
-    <div class="card" style="width: 18rem;">
+  </div>
+</div>
+    <!-- <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">Quote</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <a href="#" class="btn btn-primary">Go</a>
       </div>
-    </div>
+    </div> -->
 
-
+  </div>
     <!-- Footer -->
     <footer class=" footer border-top text-dark text-center ">
       <div class="container ">
@@ -119,12 +132,13 @@
     </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
-      crossorigin="anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
-      crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
       crossorigin="anonymous "></script>
+      <script src="javascript/index.main.js"></script>
 
 
 </body>
