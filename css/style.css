@@ -2,6 +2,10 @@ html {
   position: relative;
   min-height: 100%;
 }
+.bodySearch {
+  background: url("../images/white-background.jpg");
+  background-size: 100%;
+}
 body {
   margin-bottom: 60px; /* Margin bottom by footer height */
 }
@@ -20,6 +24,12 @@ body {
     -o-background-size: cover;
     background-size: cover;
   }
+  .nav-link {
+    font-family: 'Jua', sans-serif;
+   }
+   .imageText{
+    font-family: 'Pangolin', cursive;
+   }
 #contactForm {
 margin: 100px 500px 50px 500px;
 }
