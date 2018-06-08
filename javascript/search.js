@@ -14,20 +14,25 @@ $("#search-btn").on("click", function (event) {
         var url = "https://www.googleapis.com/books/v1/volumes?Key=AIzaSyBiP1NMmkUqkbKrg1Q3B9ou9HvUvP-t5xc&q=" + q;
 
         axios.get(url).then(function (response) {
-            // console.log( response.data.items); 
-            $("#book-view").empty();
-            $("#desc-body").empty();
-            for (var i = 0; i < response.data.items.length; i++) {
-                var item = response.data.items[i];
 
-                console.log(item.volumeInfo);
-                console.log(item.volumeInfo.industryIdentifiers[1].identifier);
+            // console.log( response.data.items);
+             $("#book-view").empty(); 
+            for (var i = 0; i < response.data.items.length; i++) { 
+               
+              
+                //check if this empty then mention that to user 
+
+                var item = response.data.items[i];
+                   console.log(item.volumeInfo);
+                var isbn=item.volumeInfo.industryIdentifiers[1].identifier;
                 var bookTitle = item.volumeInfo.title;
                 var imgSrc = item.volumeInfo.imageLinks.smallThumbnail;
                 var authors = item.volumeInfo.authors[0];
                 var category = item.volumeInfo.categories[0];
                 var desription = item.volumeInfo.description;
+
                 console.log("des is "+desription);
+
 
 
 
