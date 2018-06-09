@@ -12,7 +12,6 @@ $("#search-btn").on("click", function (event) {
     else {
         //url for calling google book API 
         var url = "https://www.googleapis.com/books/v1/volumes?Key=AIzaSyBiP1NMmkUqkbKrg1Q3B9ou9HvUvP-t5xc&q=" + q;
-
         axios.get(url).then(function (response) {
             //clear books div 
             $("#book-view").empty();
@@ -37,7 +36,7 @@ $("#search-btn").on("click", function (event) {
                 
                 //call ajax for goodreads API using isbn
 
-                var url = "https://cors.io/?https://www.goodreads.com/book/review_counts.json?key=UyhBVmqCWPtrAZdeZOn51A&isbns=" + isbn;
+                var url = "https://cors.io/?http://www.goodreads.com/book/review_counts.json?key=UyhBVmqCWPtrAZdeZOn51A&isbns=" + isbn;
                 axios.get(url)
                     .then(function (response) {
                         console.log(response)
@@ -73,11 +72,18 @@ $("#search-btn").on("click", function (event) {
                 if(category){
                 var categoryP = $("<p class='mt-1'>").text("𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐲  :" + category);}
                 var ratingP = $("<p class='mt-1'>").text("𝐑𝐚𝐭𝐢𝐧𝐠 :" + rating);
-                var button=$("<button class='btn bg-dark text-light '> 𝘿𝙚𝙨𝙘𝙧𝙞𝙥𝙩𝙞𝙤𝙣</buton>")
-                button.attr("onClick", "bootbox.alert('"+description+"')");
-                var col = $("<div class='col-md-3 col-sm-6 mt-2 mt-3 mb-5  myFont '>").append([b, titleP, ratingP, authorP, categoryP,button]);
-                $("#book-view").append(col);
+                var desButton=$("<button class='btn bg-dark text-light '> 𝘿𝙚𝙨𝙘𝙧𝙞𝙥𝙩𝙞𝙤𝙣</buton>")
+                
+                desButton.attr("class", "desModal");
+                desButton.attr("desription",description);
+               // button.attr("onClick", "bootbox.alert('"+description+"')");
+                
+                 var saveBtn=$("<button class='btn bg-dark text-light btn-small '> Save</buton>")
+                 saveBtn.attr("class", "saveBook");
+                 saveBtn.attr("title",bookTitle);
 
+                var col = $("<div class='col-md-3 col-sm-6 mt-2 mt-3 mb-5  myFont '>").append([b, titleP, ratingP, authorP, categoryP,desButton,saveBtn]);
+                $("#book-view").append(col);
 
             }
         }
@@ -85,10 +91,25 @@ $("#search-btn").on("click", function (event) {
             console.error(err)
         })
 
-
     }
 
-
-
-
 })
+saveBook = function () {
+
+    var title = $(this).attr("title");
+
+    console.log(title)
+}
+
+desModal = function () {
+
+    var description = $(this).attr("desription");
+    bootbox.alert(description);
+    console.log(description);
+}
+
+
+
+// Adding click event listeners to the elements with a class of "saveBook"
+$(document).on("click", ".saveBook", saveBook);
+$(document).on("click", ".desModal", desModal);

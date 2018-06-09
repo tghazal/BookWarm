@@ -88,19 +88,19 @@
                             <div class="form-bottom">
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-username">Username</label>
-                                        <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                        <label class="sr-only" for="form-username">Email</label>
+                                        <input type="text" id="email2-input"name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="form-password">Password</label>
-                                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                        <input type="password" id="password2-input" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
                                     </div>
-                                    <button type="submit" class="btn">Sign in!</button>
+                                    <button type="submit" id="loginBtn" class="btn">Sign in!</button>
                                 </form>
                             </div>
                         </div>
                     
-                        <div class="social-login">
+                        <!-- <div class="social-login">
                             <h3>...or login with:</h3>
                             <div class="social-login-buttons">
                                 <a class="btn btn-link-1 btn-link-1-facebook" href="#">
@@ -113,7 +113,7 @@
                                     <i class="fa fa-google-plus"></i> Google Plus
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                         
                     </div>
                     
@@ -136,18 +136,18 @@
                                 <form role="form" action="" method="post" class="registration-form">
                                     <div class="form-group">
                                         <label class="sr-only" for="form-first-name">Your Name</label>
-                                        <input type="text" name="form-first-name" placeholder="Your Name..." class="form-first-name form-control" id="form-first-name">
+                                        <input type="text" id="name1-input" placeholder="Your Name..." class="form-first-name form-control" id="form-first-name">
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="form-last-name">Your Email</label>
-                                        <input type="text" name="form-last-name" placeholder="Your Email..." class="form-last-name form-control" id="form-last-name">
+                                        <input type="text" id="email1-input" placeholder="Your Email..." class="form-last-name form-control" id="form-last-name">
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="form-email">Password</label>
-                                        <input type="text" name="form-email" placeholder="Password..." class="form-email form-control" id="form-email">
+                                        <input type="text"id="password1-input" placeholder="Password..." class="form-email form-control" id="form-email">
                                     </div>
 
-                                    <button type="submit" class="btn">Sign me up!</button>
+                                    <button type="submit" id="registerBtn" class="btn">Sign me up!</button>
                                 </form>
                             </div>
                         </div>
@@ -177,7 +177,68 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
+        <script src="javascript/bootbox.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDddZ0MY3GQzW0dCAvEJGHzwN7KpdndyTc",
+    authDomain: "bookworm-f822f.firebaseapp.com",
+    databaseURL: "https://bookworm-f822f.firebaseio.com",
+    projectId: "bookworm-f822f",
+    storageBucket: "bookworm-f822f.appspot.com",
+    messagingSenderId: "361463431080"
+  };
+  firebase.initializeApp(config);
+  $("#registerBtn").on("click",function(event){
+    event.preventDefault();
+    var name=$("#name1-input").val().trim();
+    var email=$("#email1-input").val().trim();
+    var password=$("#password1-input").val().trim();
+    if(!email || !password)
+    {
+        return console.log("email and Password required")
+    }
+   firebase.auth().createUserWithEmailAndPassword(email,password)
+   .then(function()
+  {
+   
+    firebase.auth().currentUser.updateProfile({displayName:name})
+   // user.updateProfile({});
+  })
+  .catch(function(error){
+      console.log("error,"+error)
+  });
+//   firebase.auth().signInWithEmailAndPassword(email,password)
+//   .catch(function(error){
+//     console.log("error,"+error.message)
+//   });
+//   console.log("welcome"+firebase.auth().currentUser.displayName)
+//   var p=$("<p>").text("welcome"+firebase.auth().currentUser.displayName).
+//   $("#name").append(p);
+  //LogInUsers( firebase.auth().currentUser);
+   
+   }) 
+  
+  $("#loginBtn").on("click",function(event){
+    event.preventDefault();
+  
+    var email=$("#email2-input").val().trim();
+    var password=$("#password2-input").val().trim();
+    
+  firebase.auth().signInWithEmailAndPassword(email,password).then(function(){
+    bootbox.alert("welcome "+firebase.auth().currentUser.displayName)
+     //  alert("welcome"+firebase.auth().currentUser.displayName)
+  })
+  .catch(function(error){
+    console.log("error,"+error.message)
+  });
+  //var p=$("<p>").text("welcome"+firebase.auth().currentUser.displayName).
+  //$("#name").append(p);
+  // LogInUsers( firebase.auth().currentUser.displayName);
+   }) 
+  
+</script>
 
 </body>
 
