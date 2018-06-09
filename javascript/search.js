@@ -1,3 +1,14 @@
+var config = {
+    apiKey: "AIzaSyDddZ0MY3GQzW0dCAvEJGHzwN7KpdndyTc",
+    authDomain: "bookworm-f822f.firebaseapp.com",
+    databaseURL: "https://bookworm-f822f.firebaseio.com",
+    projectId: "bookworm-f822f",
+    storageBucket: "bookworm-f822f.appspot.com",
+    messagingSenderId: "361463431080"
+  };
+  firebase.initializeApp(config);
+
+
 $("#search-btn").on("click", function (event) {
     //call event .preventDefault to prevent submit the form 
     event.preventDefault();
@@ -76,11 +87,14 @@ $("#search-btn").on("click", function (event) {
                 
                 desButton.attr("class", "desModal");
                 desButton.attr("desription",description);
-               // button.attr("onClick", "bootbox.alert('"+description+"')");
+               
                 
                  var saveBtn=$("<button class='btn bg-dark text-light btn-small '> Save</buton>")
                  saveBtn.attr("class", "saveBook");
                  saveBtn.attr("title",bookTitle);
+                 saveBtn.attr("imgSrc",imgSrc);
+                 saveBtn.attr("infoLink",infolink);
+
 
                 var col = $("<div class='col-md-3 col-sm-6 mt-2 mt-3 mb-5  myFont '>").append([b, titleP, ratingP, authorP, categoryP,desButton,saveBtn]);
                 $("#book-view").append(col);
@@ -95,10 +109,20 @@ $("#search-btn").on("click", function (event) {
 
 })
 saveBook = function () {
-
+  console.log( firebase.auth().currentUser.displayName);
     var title = $(this).attr("title");
+    var imgSrc = $(this).attr("imgSrc");
+    var infoLink = $(this).attr("infoLink");
+    console.log(title);
+    ref=firebase.database().ref("/books");
 
-    console.log(title)
+ref.push().set({
+name:firebase.auth().currentUser.displayName,
+bookTitle:title,
+imgSrc:imgSrc,
+infoLink,infoLink
+
+})
 }
 
 desModal = function () {
