@@ -16,12 +16,12 @@
 </head>
 
 <body class="homeBody">
-   
+
   <!-- Navigation -->
   <div class="navDiv ">
     <nav class="navbar navbar-expand-lg navbar-light bg-light textColor fixed-top shadow mb-3">
       <div class="container ">
-         
+
         <a class="navbar-brand" href="#">
           <img src="images/bookworm.png" width="30" height="30" class="d-inline-block align-top" alt=""> ƁƠƠƘƜƠƦM
         </a>
@@ -39,107 +39,177 @@
               <a class="nav-link" href="search.html">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="price.html">My Favourite</a>
+              <a class="nav-link" href="myFavourite.html">My Favourite</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="login.html">Log In</a>
+            </li> -->
+            <li>
+              <a href="#" class="text-uppercase" data-toggle="modal" data-target="#login-modal">Login</a>
+              <a> / </a>
+              <a class="text-uppercase" href="#" data-toggle="modal" data-target="#register-modal">Register</a>
             </li>
+        
           </ul>
         </div>
-        
+
       </div>
     </nav>
-   
-     
-    <div class="container-fluid">
 
-    
+  </div>
+  <div class="container-fluid">
+
+
     <div class="row">
       <div class="col-md-12">
-      <div id="quote" class="bg-light p-3">“So many books, so little time.” 
-          ― Frank Zappa</div>
-  
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('images/book2.jpg')">
-          <div class="carousel-caption d-none d-md-block ">
-            <h2>ƁƠƠƘƜƠƦM</h2>
-            <h4>
-              <p class="myFont"> you can search any book you want !!!</p>
-              </h3>
-              <button class="btn btn-warning px-4">
-              <a href="search.html">Search</a>
-            </button>
-          </div>
-        </div>
-        <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('images/book8.jpg')">
-          <div class="carousel-caption  d-none d-md-block">
-            <h3>ƁƠƠƘƜƠƦM</h3>
-            <p>you can save your favourite books</p>
-            <button class="btn btn-warning px-4">
-                <a href="myFavourite.html">My Favourite</a>
-              </button>
-          </div>
+        <div id="name"></div>
+        <div id="quote" class="bg-light p-3">“So many books, so little time.” ― Frank Zappa</div>
 
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('images/book2.jpg')">
+              <div class="carousel-caption d-none d-md-block ">
+                <h2>ƁƠƠƘƜƠƦM</h2>
+                <h4>
+                  <p class="myFont"> you can search any book you want !!!</p>
+                  </h3>
+                  <button class="btn btn-warning px-4">
+                    <a href="search.html">Search</a>
+                  </button>
+              </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('images/book8.jpg')">
+              <div class="carousel-caption  d-none d-md-block">
+                <h3>ƁƠƠƘƜƠƦM</h3>
+                <p>you can save your favourite books</p>
+                <button class="btn btn-warning px-4">
+                  <a href="myFavourite.html">My Favourite</a>
+                </button>
+              </div>
+
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('images/book9.jpg')">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>ƁƠƠƘƜƠƦM</h3>
+                <p>books are magic</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('images/book9.jpg')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>ƁƠƠƘƜƠƦM</h3>
-            <p>books are magic</p>
+
+      </div>
+    </div>
+    <div id="login-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog margin-auto">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 class="text-center text-uppercase">Login to Your Account</h2>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" id="email2-input" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="password2-input" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <input type="submit" id="loginBtn" class="form-control btn-primary" value="Login">
+              </div>
+            </form>
+            <p>
+              <a class="small modal-links" href="#" data-dismiss="modal" data-toggle="modal" data-target="#register-modal">Register</a>
+              <a class="small modal-links" href="#" data-dismiss="modal" data-toggle="modal" data-target="#forget-modal">Forget Password</a>
+            </p>
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+    </div>
+    <div id="register-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog margin-auto">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 class="text-center text-uppercase">Register to Your Account</h2>
+            <form>
+             
+              <div class="form-group">
+                <input type="text" class="form-control" id="name1-input" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="email1-input" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="password1-input" placeholder="Password">
+              </div>
+              
+              <div class="form-group">
+                <input type="submit" id="registerBtn" class="form-control btn-primary" value="Register">
+              </div>
+            </form>
+            <p>
+              <a class="small modal-links" href="#" data-dismiss="modal" data-toggle="modal" data-target="#login-modal">Login</a>
+              <a class="small modal-links" href="#" data-dismiss="modal" data-toggle="modal" data-target="#forget-modal">Forget Password</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="forget-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog margin-auto">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 class="text-center text-uppercase">Forget Your Password</h2>
+            <form>
+              <p class="small">Enter your Email Address that you used to register. We'll send you an email with your username and a link to
+                reset your password.</p>
+              <div class="form-group">
+                <input type="text" class="form-control" id="email" placeholder="Email">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
-</div>
-    <!-- <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Quote</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go</a>
-      </div>
-    </div> -->
-
   </div>
-    <!-- Footer -->
-    <footer class=" footer border-top text-dark text-center ">
-      <div class="container ">
+  <!-- Footer -->
+  <footer class=" footer border-top text-dark text-center ">
+    <div class="container ">
 
-        <img src="images/bookworm.png " width="30 " height="30 " class="d-inline-block ext-center align-middle " alt=" ">
-        <span class="text-center "> Copyright &copy; Bookworm 2018</span>
+      <img src="images/bookworm.png " width="30 " height="30 " class="d-inline-block ext-center align-middle " alt=" ">
+      <span class="text-center "> Copyright &copy; Bookworm 2018</span>
 
-      </div>
-      <!-- /.container -->
-    </footer>
+    </div>
+    <!-- /.container -->
+  </footer>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
-      crossorigin="anonymous "></script>
-      <script src="javascript/index.main.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+    crossorigin="anonymous "></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script src="javascript/index.main.js"></script>
 
 
 </body>

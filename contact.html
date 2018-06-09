@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <title>Contact Us</title>
@@ -15,82 +16,92 @@
 
 <body class="bodyContact">
 
-   <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light textColor fixed-top shadow">
-    <div class="container ">
-        <a class="navbar-brand" href="#">
-            <img src="images/bookworm.png" width="30" height="30" class="d-inline-block align-top" alt=""> ƁƠƠƘƜƠƦM
-          </a>
-       
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">ӇƠMЄ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="search.html">ƧЄƛƦƇӇ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="price.html">MƳ ƑƛƔƠƲƦƖƬЄ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">ƇƠƝƬƛƇƬ ƲƧ</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login.html">Log In</a>
-              </li>
-            </ul>
+    <!-- Navigation -->
+    <div class="navDiv ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light textColor fixed-top shadow mb-3">
+            <div class="container ">
+
+                <a class="navbar-brand" href="#">
+                    <img src="images/bookworm.png" width="30" height="30" class="d-inline-block align-top" alt=""> ƁƠƠƘƜƠƦM
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="search.html">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="myFavourite.html">My Favourite</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    </div>
+    <!-- Default form contact -->
+    <form id="contactForm">
+        <p class="h4 text-center mb-4">Write to us</p>
+
+        <!-- Default input name -->
+        <label for="defaultFormContactNameEx" class="grey-text">Your name</label>
+        <input type="text" id="defaultFormContactNameEx" class="form-control">
+
+        <br>
+
+        <!-- Default input email -->
+        <label for="defaultFormContactEmailEx" class="grey-text">Your email</label>
+        <input type="email" id="defaultFormContactEmailEx" class="form-control">
+
+        <br>
+
+        <!-- Default input subject -->
+        <label for="defaultFormContactSubjectEx" class="grey-text">Subject</label>
+        <input type="text" id="defaultFormContactSubjectEx" class="form-control">
+
+        <br>
+
+        <!-- Default textarea message -->
+        <label for="defaultFormContactMessageEx" class="grey-text">Your message</label>
+        <textarea type="text" id="defaultFormContactMessageEx" class="form-control" rows="3"></textarea>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-outline-warning" type="submit">Send
+                <i class="fa fa-paper-plane-o ml-2"></i>
+            </button>
         </div>
-    </div>
-</nav>
-<!-- Default form contact -->
-<form id="contactForm">
-    <p class="h4 text-center mb-4">Write to us</p>
-
-    <!-- Default input name -->
-    <label for="defaultFormContactNameEx" class="grey-text">Your name</label>
-    <input type="text" id="defaultFormContactNameEx" class="form-control">
-    
-    <br>
-
-    <!-- Default input email -->
-    <label for="defaultFormContactEmailEx" class="grey-text">Your email</label>
-    <input type="email" id="defaultFormContactEmailEx" class="form-control">
-
-    <br>
-
-    <!-- Default input subject -->
-    <label for="defaultFormContactSubjectEx" class="grey-text">Subject</label>
-    <input type="text" id="defaultFormContactSubjectEx" class="form-control">
-
-    <br>
-    
-    <!-- Default textarea message -->
-    <label for="defaultFormContactMessageEx" class="grey-text">Your message</label>
-    <textarea type="text" id="defaultFormContactMessageEx" class="form-control" rows="3"></textarea>
-
-    <div class="text-center mt-4">
-        <button class="btn btn-outline-warning" type="submit">Send<i class="fa fa-paper-plane-o ml-2"></i></button>
-    </div>
-</form>
-<!-- Default form contact -->
-                      
-
-  <!-- Footer -->
-  <footer class=" footer border-top   text-dark text-center">
-      <img src="images/bookworm.png" width="30" height="30" class="d-inline-block ext-center align-middle " alt="">
-      <span class="text-center"> Copyright &copy; Bookworm 2018</span>
-  <!-- /.container -->
-</footer>
+    </form>
+    <!-- Default form contact -->
 
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Footer -->
+    <footer class=" footer border-top   text-dark text-center">
+        <img src="images/bookworm.png" width="30" height="30" class="d-inline-block ext-center align-middle " alt="">
+        <span class="text-center"> Copyright &copy; Bookworm 2018</span>
+        <!-- /.container -->
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 
 </body>
