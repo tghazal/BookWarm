@@ -301,7 +301,7 @@ img { max-width: 100%; }
 
 .middle-border {
 	min-height: 300px;
-	margin-top: 170px;
+	margin-top: 60px;
 	border-right: 1px solid #ddd;
 }
 
@@ -315,4 +315,5 @@ img { max-width: 100%; }
 
 .btn:hover {
   background-color: #19b9e7;
+  color: white;
 }
