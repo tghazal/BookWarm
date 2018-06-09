@@ -37,7 +37,7 @@ $("#search-btn").on("click", function (event) {
                 
                 //call ajax for goodreads API using isbn
 
-                var url = "https://cors.io/?http://www.goodreads.com/book/review_counts.json?key=UyhBVmqCWPtrAZdeZOn51A&isbns=" + isbn;
+                var url = "https://cors.io/?https://www.goodreads.com/book/review_counts.json?key=UyhBVmqCWPtrAZdeZOn51A&isbns=" + isbn;
                 axios.get(url)
                     .then(function (response) {
                         console.log(response)
