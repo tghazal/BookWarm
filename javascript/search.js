@@ -6,7 +6,7 @@ $("#search-btn").on("click", function (event) {
     var q = $("#search-text").val().trim();
     //if the value is null then ask user to enter value 
     if (q === "") {
-
+        $("#book-view").text("No results!!!you didn't enter any value")
     }
     //if the value is not null then do the seach for the book
     else {
@@ -42,6 +42,7 @@ $("#search-btn").on("click", function (event) {
                     .then(function (response) {
                         console.log(response)
                         rating = response.data.books[0].average_rating;
+                        console.log("rating is "+rating)
 
                     })
                     .catch(function (error) {
@@ -63,27 +64,19 @@ $("#search-btn").on("click", function (event) {
                 var bookImg = $("<img>");
                 bookImg.attr("src", imgSrc);
                 bookImg.css("width", "180px");
-                bookImg.css("height", "180px");
-               bookImg.append("<a href="+infolink+"></a>");
-                
-               
-               // var a=$("<a  target='_blank' href="+infolink+"></a>")
-              //  bookImg.wrap(a);
-                var titleP = $("<p>").text("Title :" + bookTitle);
+                bookImg.css("height", "180px");  
+                var a=$("<a  target='_blank' href="+infolink+"></a>");
+                b=a.append(bookImg);
+                var titleP = $("<p class='mt-2'>").text("𝐓𝐢𝐭𝐥𝐞 :" + bookTitle);
                 if (authors){
-                var authorP = $("<p>").text("Author is  :" + authors);}
+                var authorP = $("<p class='mt-1'>").text("𝐀𝐮𝐭𝐡𝐨𝐫 :" + authors);}
                 if(category){
-                var categoryP = $("<p>").text("Category is  :" + category);}
-                var ratingP = $("<p>").text("Rating is  :" + rating);
-                var button=$("<button class='btn btn-info btn-lg'> Desription</buton>")
+                var categoryP = $("<p class='mt-1'>").text("𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐲  :" + category);}
+                var ratingP = $("<p class='mt-1'>").text("𝐑𝐚𝐭𝐢𝐧𝐠 :" + rating);
+                var button=$("<button class='btn bg-dark text-light '> 𝘿𝙚𝙨𝙘𝙧𝙞𝙥𝙩𝙞𝙤𝙣</buton>")
                 button.attr("onClick", "bootbox.alert('"+description+"')");
-                var col = $("<div class='col-md-3 col-sm-6 mt-2 '>").append([bookImg, titleP, ratingP, authorP, categoryP,button]);
+                var col = $("<div class='col-md-3 col-sm-6 mt-2 mt-3 mb-5  myFont '>").append([b, titleP, ratingP, authorP, categoryP,button]);
                 $("#book-view").append(col);
-
-
-               
-
-
 
 
             }
