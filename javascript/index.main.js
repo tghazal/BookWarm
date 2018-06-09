@@ -14,7 +14,7 @@ function displayQuote()
    success:function(response){
    console.log(response.quoteText);
    
-    $("#quote").text(response.quoteText)
+    $("#quote").text("“"+response.quoteText+".“ ―"+response.quoteAuthor)
    // $("#author").text(response.quoteAuthor)
 
 
