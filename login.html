@@ -38,15 +38,21 @@
               <a class="nav-link" href="search.html">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="myFavourite.html">My Favourite</a>
+              <a class="nav-link" href="myFavourite.html"> Favourite</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
+              <a class="nav-link" href="contact.html">Contact </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="loginNav">
               <a class="nav-link" href="login.html">Log In</a>
             </li>
-
+            
+            <li class="nav-item d-none" id="logoutNav">
+                    <button class="nav-link btn btn-light logoutBtn" type="submit">Log Out</button>
+                  </li>
+            <li id="name" class="nav-item nav-link">
+                   
+                  </li>
 
 
           </ul>
@@ -170,14 +176,16 @@
         <!-- /.container -->
     </footer>
 
-    <script src="javascript/login.js"></script>
+   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        
         <script src="javascript/bootbox.min.js"></script>
+        <script src="javascript/login.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -190,53 +198,21 @@
     messagingSenderId: "361463431080"
   };
   firebase.initializeApp(config);
-  $("#registerBtn").on("click",function(event){
-    event.preventDefault();
-    var name=$("#name1-input").val().trim();
-    var email=$("#email1-input").val().trim();
-    var password=$("#password1-input").val().trim();
-    if(!email || !password)
-    {
-        return console.log("email and Password required")
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      console.log("user in is "+user.displayName);
+      $("#loginNav").addClass("d-none");
+      $("#logoutNav").removeClass("d-none")
+      $("#logoutNav").addClass("d-block")
+      var p=$("<p>").text("welcome "+user.displayName);
+        $("#name").empty();
+      $("#name").append(p);
     }
-   firebase.auth().createUserWithEmailAndPassword(email,password)
-   .then(function()
-  {
-   
-    firebase.auth().currentUser.updateProfile({displayName:name})
-   // user.updateProfile({});
-  })
-  .catch(function(error){
-      console.log("error,"+error)
-  });
-//   firebase.auth().signInWithEmailAndPassword(email,password)
-//   .catch(function(error){
-//     console.log("error,"+error.message)
-//   });
-//   console.log("welcome"+firebase.auth().currentUser.displayName)
-//   var p=$("<p>").text("welcome"+firebase.auth().currentUser.displayName).
-//   $("#name").append(p);
-  //LogInUsers( firebase.auth().currentUser);
-   
-   }) 
-  
-  $("#loginBtn").on("click",function(event){
-    event.preventDefault();
-  
-    var email=$("#email2-input").val().trim();
-    var password=$("#password2-input").val().trim();
-    
-  firebase.auth().signInWithEmailAndPassword(email,password).then(function(){
-    bootbox.alert("welcome "+firebase.auth().currentUser.displayName)
-     //  alert("welcome"+firebase.auth().currentUser.displayName)
-  })
-  .catch(function(error){
-    console.log("error,"+error.message)
-  });
-  //var p=$("<p>").text("welcome"+firebase.auth().currentUser.displayName).
-  //$("#name").append(p);
-  // LogInUsers( firebase.auth().currentUser.displayName);
-   }) 
+      else{
+      
+      }
+    })
   
 </script>
 
