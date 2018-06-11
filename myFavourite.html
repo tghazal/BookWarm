@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
    
 
-    <title>My Favourite</title>
+    <title>Favourite</title>
 </head>
 
 <body class="bodySearch">
@@ -43,10 +43,16 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Log In</a>
-            </li>
-
+            <li class="nav-item" id="loginNav">
+                    <a class="nav-link" href="login.html">Log In</a>
+                  </li>
+                  
+                  <li class="nav-item d-none" id="logoutNav">
+                          <button class="nav-link btn btn-light logoutBtn" type="submit">Log Out</button>
+                        </li>
+                  <li id="name" class="nav-item nav-link">
+                         
+                        </li>
 
 
 
@@ -58,7 +64,16 @@
 
     <div calss="container-fluid">
       
-      
+            <div class="row w-100 ml-5 mb-5 mt-5" >
+<div class="col-md-12">
+   <h1 >your saved books </h1>
+</div>
+                </div>
+
+
+            <div class="row w-100 ml-5 mb-5 mt-5" id="favourite-view">
+
+             </div>
     </div>
 
 
