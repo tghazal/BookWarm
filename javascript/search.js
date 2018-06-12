@@ -53,6 +53,7 @@ $("#search-btn").on("click", function (event) {
             for (var i = 0; i < response.data.items.length; i++)
              {
                 var rating;
+                var ratingBtn;
                 //check if this empty then mention that to user 
                 var item = response.data.items[i];
 
@@ -62,18 +63,13 @@ $("#search-btn").on("click", function (event) {
                 var isbn = item.volumeInfo.industryIdentifiers[1].identifier;
                 
                 //call ajax for goodreads API using isbn
+                 ratingBtn=$("<button class='btn bg-dark text-light '>Get Rating</buton>")
+               
+                 ratingBtn.attr("class", "getRating");
+                 ratingBtn.attr("isbn",isbn);
+               
+                var ratingp=$("<p>").append(ratingBtn);
 
-                var url = "https://cors.io/?http://www.goodreads.com/book/review_counts.json?key=UyhBVmqCWPtrAZdeZOn51A&isbns=" + isbn;
-                axios.get(url)
-                    .then(function (response) {
-                        console.log(response)
-                        rating = response.data.books[0].average_rating;
-                        console.log("rating is "+rating)
-
-                    })
-                    .catch(function (error) {
-                        console.log(error)
-                    })
                 }
                 var bookTitle = item.volumeInfo.title;
                 var imgSrc = item.volumeInfo.imageLinks.smallThumbnail;
@@ -100,19 +96,19 @@ $("#search-btn").on("click", function (event) {
                 var categoryP = $("<p class='mt-1'>").text("𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐲  :" + category);}
                 var ratingP = $("<p class='mt-1'>").text("𝐑𝐚𝐭𝐢𝐧𝐠 :" + rating);
                 var desButton=$("<button class='btn bg-dark text-light '> 𝘿𝙚𝙨𝙘𝙧𝙞𝙥𝙩𝙞𝙤𝙣</buton>")
-                
+               
                 desButton.attr("class", "desModal");
                 desButton.attr("desription",description);
                
-                
-                 var saveBtn=$("<button class='btn bg-dark text-light btn-small '> Save</buton>")
+                var desp=$("<p>").append(desButton);
+                 var saveBtn=$("<button class='far fa-save'> Save</button>")
                  saveBtn.attr("class", "saveBook");
                  saveBtn.attr("title",bookTitle);
                  saveBtn.attr("imgSrc",imgSrc);
                  saveBtn.attr("infoLink",infolink);
+                 var savep=$("<p>").append(saveBtn);
 
-
-                var col = $("<div class='col-md-3 col-sm-6 mt-2 mt-3 mb-5  myFont '>").append([b, titleP, ratingP, authorP, categoryP,desButton,saveBtn]);
+                var col = $("<div class='col-md-3 col-sm-6 mt-2 mt-3 mb-5  myFont '>").append([b, titleP, ratingP, authorP, categoryP,desp,ratingp,savep]);
                 $("#book-view").append(col);
 
             }
@@ -125,6 +121,9 @@ $("#search-btn").on("click", function (event) {
 
 })
 saveBook = function () {
+
+    if(firebase.auth().currentUser)
+    {
   console.log( firebase.auth().currentUser.displayName);
     var title = $(this).attr("title");
     var imgSrc = $(this).attr("imgSrc");
@@ -139,6 +138,10 @@ imgSrc:imgSrc,
 infoLink:infoLink
 
 })
+    }
+    else{
+        bootbox.alert("please log in before saving");
+    }
 }
 
 desModal = function () {
@@ -149,10 +152,33 @@ desModal = function () {
 }
 
 
+getRating=function(){
+    console.log("hi");
+    var isbn=$(this).attr("isbn");
+    console.log(isbn)
+
+    var url = "https://cors.io/?http://www.goodreads.com/book/review_counts.json?key=UyhBVmqCWPtrAZdeZOn51A&isbns=" + isbn;
+    axios.get(url)
+        .then(function (response) {
+            console.log(response)
+           rating = response.data.books[0].average_rating;
+           review = response.data.books[0].reviews_count
+           bootbox.alert("Rating = "+rating +"  AND Reviews count = "+review);
+
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    }
+
+
+
+
 
 // Adding click event listeners to the elements with a class of "saveBook"
 $(document).on("click", ".saveBook", saveBook);
 $(document).on("click", ".desModal", desModal);
+$(document).on("click",".getRating",getRating);
 
 
 $(".logoutBtn").on("click",function(event){ 
