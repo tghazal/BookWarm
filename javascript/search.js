@@ -52,7 +52,7 @@ $("#search-btn").on("click", function (event) {
             {
             for (var i = 0; i < response.data.items.length; i++)
              {
-                var rating;
+                
                 var ratingBtn;
                 //check if this empty then mention that to user 
                 var item = response.data.items[i];
@@ -63,7 +63,7 @@ $("#search-btn").on("click", function (event) {
                 var isbn = item.volumeInfo.industryIdentifiers[1].identifier;
                 
                 //call ajax for goodreads API using isbn
-                 ratingBtn=$("<button class='btn bg-dark text-light '>Get Rating</buton>")
+                 ratingBtn=$("<button class='btn bg-dark text-light '  style='color:black;font-weight:bold'>Get Rating</buton>")
                
                  ratingBtn.attr("class", "getRating");
                  ratingBtn.attr("isbn",isbn);
@@ -89,26 +89,27 @@ $("#search-btn").on("click", function (event) {
                 bookImg.css("height", "180px");  
                 var a=$("<a  target='_blank' href="+infolink+"></a>");
                 b=a.append(bookImg);
-                var titleP = $("<p class='mt-2'>").text("𝐓𝐢𝐭𝐥𝐞 :" + bookTitle);
+                
+                var titleP = $("<p class='mt-2'>").html("<span style='color:black;font-weight:bold'>Title :</span>" + bookTitle);
                 if (authors){
-                var authorP = $("<p class='mt-1'>").text("𝐀𝐮𝐭𝐡𝐨𝐫 :" + authors);}
+                var authorP = $("<p class='mt-1'>").html("<span style='color:black;font-weight:bold'>Auther :</span>"+ authors);}
                 if(category){
-                var categoryP = $("<p class='mt-1'>").text("𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐲  :" + category);}
-                var ratingP = $("<p class='mt-1'>").text("𝐑𝐚𝐭𝐢𝐧𝐠 :" + rating);
-                var desButton=$("<button class='btn bg-dark text-light '> 𝘿𝙚𝙨𝙘𝙧𝙞𝙥𝙩𝙞𝙤𝙣</buton>")
+                var categoryP = $("<p class='mt-1'>").html("<span style='color:black;font-weight:bold'>Category :</span>" + category);}
+              
+                var desButton=$("<button class='btn bg-dark text-light  ' style='color:black;font-weight:bold'> Description</buton>")
                
                 desButton.attr("class", "desModal");
                 desButton.attr("desription",description);
                
                 var desp=$("<p>").append(desButton);
-                 var saveBtn=$("<button class='far fa-save'> Save</button>")
+                 var saveBtn=$("<button  style='color:black;font-weight:bold'> <i class='fa fa-save'> Save</i> </button>")
                  saveBtn.attr("class", "saveBook");
                  saveBtn.attr("title",bookTitle);
                  saveBtn.attr("imgSrc",imgSrc);
                  saveBtn.attr("infoLink",infolink);
                  var savep=$("<p>").append(saveBtn);
 
-                var col = $("<div class='col-md-3 col-sm-6 mt-2 mt-3 mb-5  myFont '>").append([b, titleP, ratingP, authorP, categoryP,desp,ratingp,savep]);
+                var col = $("<div class='col-md-3 col-sm-6 mt-2 mt-3 mb-5  myFont '>").append([b, titleP,  authorP, categoryP,desp,ratingp,savep]);
                 $("#book-view").append(col);
 
             }
