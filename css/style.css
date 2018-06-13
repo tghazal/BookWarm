@@ -242,7 +242,8 @@ img { max-width: 100%; }
 .top-content .description a:focus { border-bottom: 1px dotted #19b9e7; }
 
 .form-box {
-	margin-top: 70px;
+  margin-top: 70px;
+  
 }
 
 .form-top {
