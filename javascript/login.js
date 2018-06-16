@@ -22,6 +22,15 @@ $("#registerBtn").on("click",function(event){
    .then(function()
   {
     firebase.auth().currentUser.updateProfile({displayName:name})
+    
+    firebase.auth().signInWithEmailAndPassword(email,password).then(function(){
+        bootbox.alert("welcome "+firebase.auth().currentUser.displayName)
+        window.location.href = 'index.html';
+    })
+
+
+
+  
    
   })
   .catch(function(error){
