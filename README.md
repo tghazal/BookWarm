@@ -18,3 +18,6 @@
 
 # API’s used
 * Google Book API, Goodreads API , Quote API (forismatic)
+
+# Demo 
+to view the app click on this  --> link https://tghazal.github.io/BookWorm/
