@@ -10,9 +10,9 @@
 * CSS 
 * JavaScript
 * bootbox.js(JavaScript library to simplified using bootstrap models from JavaScript) 
-* jQuery,
+* jQuery
 * AJAX
-* AXIOS *
+* AXIOS 
 * Firebase authentication 
 * Firebase Database.
 
